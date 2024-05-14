@@ -1,27 +1,25 @@
 # Generate Check Digit 
 # Purpose: Calculate check digit for 8 digit CUSIPs and return 9 digit CUSIPs: 
 # Input: 
-#     cusips: a dataframe that contains the relevant CUSIP8 column
-#     CUSIP8: the column that contains the CUSIP-8 codes 
+#     CUSIP8: Column in a dataframe that contains the CUSIP-8 codes 
+#
 # Output:
 #     Returns a dataframe with a new column, CUSIP9, that is the original CUSIP8 
 #     column with a check-digit appended at the end
 #
-# Contact: BRDS (Caracuzzo, Alex <acaracuzzo@hbs.edu>)
+# Contact: BRDS (Caracuzzo, Alex acaracuzzo@hbs.edu)
+# Repo: https://github.com/hbs-brds/cusip_digits
+# Website: https://www.library.hbs.edu/baker-research-data-services
+
 
 # Define Function 
-generate_check_digit <- function(cusips, CUSIP8) { 
+gen_cusip_checkdigit <- function(CUSIP8) { 
 
-  # Insure that column CUSIP8 exists in the dataframe 
-  if (!(CUSIP8 %in% colnames(cusips))) {
-    stop(paste("Column '", CUSIP8, "' not found in the dataframe.", sep = ""))
-  }
-  
-  # Loop through each row of the dataframe 
-  cusips$CUSIP9 <- NA
-  for (i in 1:nrow(cusips)) {
+  #Loop through each row of the dataframe
+  CUSIP9 <- NA
+  for (i in 1:length(CUSIP8)) {
     ## Extract row of dataframe
-    x <- cusips$CUSIP8[i]
+    x <- CUSIP8[i]
     ## Split string into individual characters
     xlist <- as.list(strsplit(x, "")[[1]])
     
@@ -60,9 +58,9 @@ generate_check_digit <- function(cusips, CUSIP8) {
     
     
     ## Add final check digit to original CUSIP. 
-    cusips$CUSIP9[i] <- paste0(x,checkdigit)  
-    
+    CUSIP9[i] <- paste0(x,checkdigit)  
+  }  
     ## Return 9 digit CUSIPs
-    return(cusips)
-  }
+    return(CUSIP9)
+  
 }
