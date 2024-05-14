@@ -68,6 +68,11 @@ The following formula calculates the 9th check-digit of an 8-digit CUSIP ID. If 
 
 `=LET(cusip8,A2, i, SEQUENCE(LEN( cusip8)), c, MID(cusip8, i, 1), k, CODE(c), isdigit, IF((k>57) + (k<48), FALSE, TRUE), isletter, IF((k>91) + (k<64), FALSE, TRUE), p, CODE(c) - 64, v, IF(isdigit, c, IF(isletter, p+9, IF(c="", 36, IF(c="@", 37, IF(c="#", 38, "ERROR"))))), val, IF(MOD(i, 2)=0, 2v, v), digitsum, INT(val/10) + MOD(val, 10), sum, SUM(digitsum), MOD(10-MOD(sum, 10), 10))`
 
+
+``` excel
+=LET(cusip8,A2, i, SEQUENCE(LEN( cusip8)), c, MID(cusip8, i, 1), k, CODE(c), isdigit, IF((k>57) + (k<48), FALSE, TRUE), isletter, IF((k>91) + (k<64), FALSE, TRUE), p, CODE(c) - 64, v, IF(isdigit, c, IF(isletter, p+9, IF(c="", 36, IF(c="@", 37, IF(c="#", 38, "ERROR"))))), val, IF(MOD(i, 2)=0, 2v, v), digitsum, INT(val/10) + MOD(val, 10), sum, SUM(digitsum), MOD(10-MOD(sum, 10), 10))
+```
+
 ### Calculating the Ninth Digit: R
 
 [This R code defines a function to calculate the 9th check digit of a CUSIP](https://github.com/hbs-brds/cusip_digits/blob/main/Calculate%20Ninth%20Digit/R/gen_cusip_checkdigit.R).
