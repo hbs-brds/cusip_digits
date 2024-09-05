@@ -11,7 +11,7 @@ Acknowledgments: Thank you Sage Belz for providing us with this code
 
 
 Repo: https://github.com/hbs-brds/cusip_digits/tree/main
-Contact: BRDS (Caracuzzo, Alex acaracuzzo@hbs.edu)
+Contact: BRDS (brds@hbs.edu)
 """
 import pandas as pd 
 

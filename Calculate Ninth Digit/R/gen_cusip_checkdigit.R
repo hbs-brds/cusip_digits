@@ -7,7 +7,7 @@
 #     Returns a dataframe with a new column, CUSIP9, that is the original CUSIP8 
 #     column with a check-digit appended at the end
 #
-# Contact: BRDS (Caracuzzo, Alex acaracuzzo@hbs.edu)
+# Contact: BRDS (brds@hbs.edu)
 # Repo: https://github.com/hbs-brds/cusip_digits
 # Website: https://www.library.hbs.edu/baker-research-data-services
 

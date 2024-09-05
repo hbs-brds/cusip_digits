@@ -2,7 +2,7 @@
 Sample Code for running gen_cusip_checkdigit
 
 Repo: https://github.com/hbs-brds/cusip_digits/tree/main
-Contact: Caracuzzo, Alex acaracuzzo@hbs.edu
+Contact: brds@hbs.edu
 """
 # Import 
 import pandas as pd

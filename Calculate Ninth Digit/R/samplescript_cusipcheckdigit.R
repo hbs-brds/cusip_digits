@@ -3,7 +3,7 @@
 # Script that uses the function generate generate_check_digit.py
 # 
 # 
-# Contact: BRDS (Caracuzzo, Alex acaracuzzo@hbs.edu)
+# Contact: BRDS (brds@hbs.edu)
 # Repo: https://github.com/hbs-brds/cusip_digits
 # Website: https://www.library.hbs.edu/baker-research-data-services
 
